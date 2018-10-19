@@ -1,13 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package quiz;
+
+import java.awt.GridLayout;
+import javax.swing.JFrame;
+import quiz.model.MultipleChoiceQuestion;
+import quiz.view.QuestionPanel;
 
 /**
  *
- * @author Admin
+ * @author Cal Payne
  */
 public class Quiz {
 
@@ -15,7 +15,20 @@ public class Quiz {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        JFrame app = new JFrame("Quiz");
+
+        String[] choices = {"2001", "2002", "1999", "1995"};
+
+        app.setLayout(new GridLayout(2, 1));
+
+        MultipleChoiceQuestion q1 = new MultipleChoiceQuestion("When was Java made?", choices, 4);
+
+        app.add(new QuestionPanel(q1));
+        app.add(new QuestionPanel(q1));
+        app.pack();
+        app.setLocationRelativeTo(null);
+        app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        app.setVisible(true);
     }
-    
+
 }
