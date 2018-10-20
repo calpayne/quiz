@@ -4,6 +4,7 @@ import java.awt.GridLayout;
 import javax.swing.JFrame;
 import quiz.model.MultipleChoiceQuestion;
 import quiz.view.QuestionPanel;
+import quiz.view.QuizPanel;
 
 /**
  *
@@ -23,8 +24,7 @@ public class Quiz {
 
         MultipleChoiceQuestion q1 = new MultipleChoiceQuestion("When was Java made?", choices, 4);
 
-        app.add(new QuestionPanel(q1));
-        app.add(new QuestionPanel(q1));
+        app.add(new QuizPanel());
         app.pack();
         app.setLocationRelativeTo(null);
         app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
