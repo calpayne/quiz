@@ -8,7 +8,8 @@ import quiz.view.QuizPanel;
 
 /**
  *
- * @author Cal Payne
+ * @author Cal PayneCould not resolve host: github.com
+
  */
 public class Quiz {
 

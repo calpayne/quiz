@@ -22,7 +22,7 @@ public class QuizPanel extends JPanel {
     
     public QuizPanel() {
         CardLayout layout = new CardLayout();
-        count = 0;
+        count = 1;
         maxCount = 2;
         layout.setHgap(10);
         layout.setVgap(10);
@@ -39,14 +39,22 @@ public class QuizPanel extends JPanel {
         JButton previous = new JButton("Previous");
         previous.addActionListener((ActionEvent ae) -> {
             layout.previous(questionsContainer);
-            count--;
+            if(count - 1 == 0) {
+                count = maxCount;
+            } else {
+                count--;
+            }
             progress.setValue(count);
         });
         
         JButton next = new JButton("Next");
         next.addActionListener((ActionEvent ae) -> {
             layout.next(questionsContainer);
-            count++;
+            if(count + 1 == maxCount + 1) {
+                count = 1;
+            } else {
+                count++;
+            }
             progress.setValue(count);
         });
         
