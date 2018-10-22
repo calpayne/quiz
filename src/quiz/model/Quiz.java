@@ -1,6 +1,9 @@
 package quiz.model;
 
 import java.util.ArrayList;
+import quiz.view.MultipleChoiceQuestionPanel;
+import quiz.view.QuestionPanel;
+import quiz.view.SingleAnswerQuestionPanel;
 
 /**
  *
@@ -8,7 +11,7 @@ import java.util.ArrayList;
  */
 public class Quiz {
 
-    private final ArrayList<Question> questions;
+    private final ArrayList<QuestionPanel> questions;
     private static Quiz instance;
 
     private Quiz() {
@@ -24,14 +27,14 @@ public class Quiz {
     }
 
     public void addQuestion(Question question) {
-        questions.add(question);
+        if (question instanceof MultipleChoiceQuestion) {
+            questions.add(new MultipleChoiceQuestionPanel((MultipleChoiceQuestion) question));
+        } else if (question instanceof SingleAnswerQuestion) {
+            questions.add(new SingleAnswerQuestionPanel((SingleAnswerQuestion) question));
+        }
     }
 
-    public void removeQuestion(Question question) {
-        questions.remove(question);
-    }
-
-    public ArrayList<Question> getQuestions() {
+    public ArrayList<QuestionPanel> getQuestions() {
         return questions;
     }
 
