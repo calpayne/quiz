@@ -16,11 +16,11 @@ import quiz.model.MultipleChoiceQuestion;
  * @author Cal Payne
  */
 public class QuizPanel extends JPanel {
-    
+
     private final JPanel questionsContainer;
     private int count;
     private int maxCount;
-    
+
     public QuizPanel() {
         CardLayout layout = new CardLayout();
         count = 1;
@@ -29,37 +29,37 @@ public class QuizPanel extends JPanel {
         layout.setVgap(10);
         questionsContainer = new JPanel();
         questionsContainer.setLayout(layout);
-        
+
         JProgressBar progress = new JProgressBar(0, maxCount);
         progress.setPreferredSize(new Dimension(500, 24));
         progress.setValue(count);
-        
+
         String[] choices = {"2001", "2002", "1999", "1995"};
         questionsContainer.add(new MultipleChoiceQuestionPanel(new MultipleChoiceQuestion("In which year was Java made blah blah?", choices, 4)));
         questionsContainer.add(new MultipleChoiceQuestionPanel(new MultipleChoiceQuestion("When was HTML made?", choices, 1)));
-        
+
         JButton previous = new JButton("Previous");
         previous.addActionListener((ActionEvent ae) -> {
             layout.previous(questionsContainer);
-            if(count - 1 == 0) {
+            if (count - 1 == 0) {
                 count = maxCount;
             } else {
                 count--;
             }
             progress.setValue(count);
         });
-        
+
         JButton next = new JButton("Next");
         next.addActionListener((ActionEvent ae) -> {
             layout.next(questionsContainer);
-            if(count + 1 == maxCount + 1) {
+            if (count + 1 == maxCount + 1) {
                 count = 1;
             } else {
                 count++;
             }
             progress.setValue(count);
         });
-        
+
         GridBagConstraints c = new GridBagConstraints();
         this.setLayout(new GridBagLayout());
         c.gridx = 0;
@@ -81,5 +81,5 @@ public class QuizPanel extends JPanel {
         c.anchor = GridBagConstraints.EAST;
         this.add(next, c);
     }
-    
+
 }

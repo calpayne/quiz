@@ -1,14 +1,12 @@
 package quiz.view;
 
-import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import quiz.model.MultipleChoiceQuestion;
 
 /**
@@ -20,8 +18,8 @@ public class MultipleChoiceQuestionPanel extends JPanel implements QuestionPanel
     public MultipleChoiceQuestionPanel(MultipleChoiceQuestion q) {
         GridLayout layout = new GridLayout(3, 1);
         layout.setVgap(15);
-        
-        JLabel question = new JLabel(q.getQuestion());
+
+        JLabel question = new JLabel(q.getQuestion(), SwingConstants.CENTER);
 
         JComboBox choices = new JComboBox(q.getChoices());
 
