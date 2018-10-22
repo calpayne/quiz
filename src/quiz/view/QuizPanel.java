@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import quiz.model.MultipleChoiceQuestion;
+import quiz.model.SingleAnswerQuestion;
 
 /**
  *
@@ -24,7 +25,7 @@ public class QuizPanel extends JPanel {
     public QuizPanel() {
         CardLayout layout = new CardLayout();
         count = 1;
-        maxCount = 2;
+        maxCount = 3;
         layout.setHgap(10);
         layout.setVgap(10);
         questionsContainer = new JPanel();
@@ -37,6 +38,7 @@ public class QuizPanel extends JPanel {
         String[] choices = {"2001", "2002", "1999", "1995"};
         questionsContainer.add(new MultipleChoiceQuestionPanel(new MultipleChoiceQuestion("In which year was Java made blah blah?", choices, 4)));
         questionsContainer.add(new MultipleChoiceQuestionPanel(new MultipleChoiceQuestion("When was HTML made?", choices, 1)));
+        questionsContainer.add(new SingleAnswerQuestionPanel(new SingleAnswerQuestion("What does HTML stand for?", "Hyper Text Markup Language")));
 
         JButton previous = new JButton("Previous");
         previous.addActionListener((ActionEvent ae) -> {
