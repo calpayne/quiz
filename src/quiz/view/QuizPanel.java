@@ -1,6 +1,7 @@
 package quiz.view;
 
 import java.awt.CardLayout;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -30,11 +31,12 @@ public class QuizPanel extends JPanel {
         questionsContainer.setLayout(layout);
         
         JProgressBar progress = new JProgressBar(0, maxCount);
+        progress.setPreferredSize(new Dimension(500, 24));
         progress.setValue(count);
         
         String[] choices = {"2001", "2002", "1999", "1995"};
-        questionsContainer.add(new QuestionPanel(new MultipleChoiceQuestion("When was Java made?", choices, 4)));
-        questionsContainer.add(new QuestionPanel(new MultipleChoiceQuestion("When was HTML made?", choices, 1)));
+        questionsContainer.add(new MultipleChoiceQuestionPanel(new MultipleChoiceQuestion("In which year was Java made blah blah?", choices, 4)));
+        questionsContainer.add(new MultipleChoiceQuestionPanel(new MultipleChoiceQuestion("When was HTML made?", choices, 1)));
         
         JButton previous = new JButton("Previous");
         previous.addActionListener((ActionEvent ae) -> {
@@ -63,7 +65,7 @@ public class QuizPanel extends JPanel {
         c.gridx = 0;
         c.gridy = 0;
         c.gridwidth = 3;
-        c.insets = new Insets(10, 10, 10, 10);
+        c.insets = new Insets(100, 10, 10, 10);
         this.add(questionsContainer, c);
         c.gridx = 0;
         c.gridy = 1;

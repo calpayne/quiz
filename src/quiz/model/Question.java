@@ -12,9 +12,7 @@ public abstract class Question {
         this.question = question;
     }
     
-    public abstract boolean checkAnswer(String answer);
-    
-    public abstract boolean checkAnswer(int answer);
+    public abstract boolean checkAnswer();
     
     public String getQuestion() {
         return question;

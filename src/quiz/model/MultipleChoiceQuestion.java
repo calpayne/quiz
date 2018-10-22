@@ -8,6 +8,7 @@ public class MultipleChoiceQuestion extends Question {
     
     private final String[] choices;
     private final int answer;
+    private int theirAnswer;
 
     public MultipleChoiceQuestion(String question, String[] choices, int answer) {
         super(question);
@@ -18,15 +19,14 @@ public class MultipleChoiceQuestion extends Question {
     public String[] getChoices() {
         return choices;
     }
-
-    @Override
-    public boolean checkAnswer(String answer) {
-        return false;
+    
+    public void submitAnswer(int answer) {
+        this.theirAnswer = answer;
     }
 
     @Override
-    public boolean checkAnswer(int answer) {
-        return this.answer == answer;
+    public boolean checkAnswer() {
+        return answer == theirAnswer;
     }
     
 }
