@@ -9,18 +9,20 @@ import quiz.view.SingleAnswerQuestionPanel;
  *
  * @author Cal Payne
  */
-public class Quiz {
+public class QuizQuestions {
 
     private final ArrayList<QuestionPanel> questions;
-    private static Quiz instance;
+    private int count;
+    private static QuizQuestions instance;
 
-    private Quiz() {
+    private QuizQuestions() {
+        count = 0;
         questions = new ArrayList();
     }
 
-    public static Quiz getInstance() {
+    public static QuizQuestions getInstance() {
         if (instance == null) {
-            instance = new Quiz();
+            instance = new QuizQuestions();
         }
 
         return instance;
@@ -28,10 +30,16 @@ public class Quiz {
 
     public void addQuestion(Question question) {
         if (question instanceof MultipleChoiceQuestion) {
+            count++;
             questions.add(new MultipleChoiceQuestionPanel((MultipleChoiceQuestion) question));
         } else if (question instanceof SingleAnswerQuestion) {
+            count++;
             questions.add(new SingleAnswerQuestionPanel((SingleAnswerQuestion) question));
         }
+    }
+    
+    public int getCount() {
+        return count;
     }
 
     public ArrayList<QuestionPanel> getQuestions() {

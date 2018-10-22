@@ -3,9 +3,7 @@ package quiz.view;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import quiz.model.SingleAnswerQuestion;
@@ -14,7 +12,7 @@ import quiz.model.SingleAnswerQuestion;
  *
  * @author Cal Payne
  */
-public class SingleAnswerQuestionPanel extends JPanel implements QuestionPanel {
+public class SingleAnswerQuestionPanel extends QuestionPanel {
 
     public SingleAnswerQuestionPanel(SingleAnswerQuestion q) {
         GridLayout layout = new GridLayout(3, 1);

@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import quiz.model.MultipleChoiceQuestion;
 
@@ -13,7 +12,7 @@ import quiz.model.MultipleChoiceQuestion;
  *
  * @author Cal Payne
  */
-public class MultipleChoiceQuestionPanel extends JPanel implements QuestionPanel {
+public class MultipleChoiceQuestionPanel extends QuestionPanel {
 
     public MultipleChoiceQuestionPanel(MultipleChoiceQuestion q) {
         GridLayout layout = new GridLayout(3, 1);
