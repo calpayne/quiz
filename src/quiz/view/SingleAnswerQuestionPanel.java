@@ -29,6 +29,7 @@ public class SingleAnswerQuestionPanel extends JPanel implements QuestionPanel {
             q.submitAnswer(answer.getText());
             System.out.println(q.checkAnswer());
             answer.setEditable(false);
+            submit.setEnabled(false);
         });
 
         this.add(question);

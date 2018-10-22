@@ -28,6 +28,7 @@ public class MultipleChoiceQuestionPanel extends JPanel implements QuestionPanel
             q.submitAnswer(choices.getSelectedIndex() + 1);
             System.out.println(q.checkAnswer());
             choices.setEnabled(false);
+            submit.setEnabled(false);
         });
 
         this.add(question);
