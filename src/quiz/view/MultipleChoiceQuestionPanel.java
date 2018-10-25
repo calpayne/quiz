@@ -14,6 +14,11 @@ import quiz.model.MultipleChoiceQuestion;
  */
 public class MultipleChoiceQuestionPanel extends QuestionPanel {
 
+    /**
+     * Create the GUI for a Multiple Choice Question
+     * 
+     * @param q the question to display
+     */
     public MultipleChoiceQuestionPanel(MultipleChoiceQuestion q) {
         GridLayout layout = new GridLayout(3, 1);
         layout.setVgap(15);

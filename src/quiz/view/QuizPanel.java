@@ -9,9 +9,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
-import quiz.model.MultipleChoiceQuestion;
 import quiz.model.QuizQuestions;
-import quiz.model.SingleAnswerQuestion;
 
 /**
  *

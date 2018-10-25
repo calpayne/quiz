@@ -14,6 +14,11 @@ import quiz.model.SingleAnswerQuestion;
  */
 public class SingleAnswerQuestionPanel extends QuestionPanel {
 
+    /**
+     * Create the GUI for a Single Answer Question
+     * 
+     * @param q the question to display
+     */
     public SingleAnswerQuestionPanel(SingleAnswerQuestion q) {
         GridLayout layout = new GridLayout(3, 1);
         layout.setVgap(15);

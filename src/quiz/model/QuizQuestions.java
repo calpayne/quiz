@@ -20,6 +20,9 @@ public class QuizQuestions {
         questions = new ArrayList();
     }
 
+    /**
+     * @return the only QuizQuestions instance
+     */
     public static QuizQuestions getInstance() {
         if (instance == null) {
             instance = new QuizQuestions();
@@ -28,6 +31,11 @@ public class QuizQuestions {
         return instance;
     }
 
+    /**
+     * Add a question to the quiz
+     * 
+     * @param question the question to add
+     */
     public void addQuestion(Question question) {
         if (question instanceof MultipleChoiceQuestion) {
             count++;
@@ -37,11 +45,17 @@ public class QuizQuestions {
             questions.add(new SingleAnswerQuestionPanel((SingleAnswerQuestion) question));
         }
     }
-    
+
+    /**
+     * @return total number of questions in the quiz
+     */
     public int getCount() {
         return count;
     }
 
+    /**
+     * @return an ArrayList of the questions in the quiz
+     */
     public ArrayList<QuestionPanel> getQuestions() {
         return questions;
     }

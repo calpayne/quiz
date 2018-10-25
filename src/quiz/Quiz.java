@@ -22,7 +22,7 @@ public class Quiz {
         qq.addQuestion(new MultipleChoiceQuestion("In which year was Java made blah blah?", choices, 4));
         qq.addQuestion(new MultipleChoiceQuestion("When was HTML made?", choices, 1));
         qq.addQuestion(new SingleAnswerQuestion("What does HTML stand for?", "Hyper Text Markup Language"));
-        
+
         JFrame app = new JFrame("Quiz");
         app.add(new QuizPanel());
         app.pack();
