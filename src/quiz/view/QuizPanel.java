@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
+import quiz.model.QuestionFactory;
 import quiz.model.QuizQuestions;
 
 /**
@@ -36,7 +37,7 @@ public class QuizPanel extends JPanel {
         progress.setValue(count);
 
         QuizQuestions.getInstance().getQuestions().forEach((qp) -> {
-            questionsContainer.add(qp);
+            questionsContainer.add(QuestionFactory.getQuestionPanel(qp));
         });
 
         JButton previous = new JButton("Previous");
