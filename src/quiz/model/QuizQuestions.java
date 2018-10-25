@@ -37,13 +37,8 @@ public class QuizQuestions {
      * @param question the question to add
      */
     public void addQuestion(Question question) {
-        if (question instanceof MultipleChoiceQuestion) {
-            count++;
-            questions.add(new MultipleChoiceQuestionPanel((MultipleChoiceQuestion) question));
-        } else if (question instanceof SingleAnswerQuestion) {
-            count++;
-            questions.add(new SingleAnswerQuestionPanel((SingleAnswerQuestion) question));
-        }
+        count++;
+        questions.add(QuestionFactory.getQuestionPanel(question));
     }
 
     /**
