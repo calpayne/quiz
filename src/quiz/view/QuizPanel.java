@@ -24,11 +24,11 @@ public class QuizPanel extends JPanel {
 
     public QuizPanel() {
         CardLayout layout = new CardLayout();
-        count = 1;
-        maxCount = QuizQuestions.getInstance().getCount();
-        System.out.println("MAXCOUNT: " + maxCount);
         layout.setHgap(10);
         layout.setVgap(10);
+
+        count = 1;
+        maxCount = QuizQuestions.getInstance().getCount();
         questionsContainer = new JPanel();
         questionsContainer.setLayout(layout);
 

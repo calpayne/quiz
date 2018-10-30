@@ -20,6 +20,7 @@ public class Quiz {
         QuizQuestions qq = QuizQuestions.getInstance();
         String[] choices = {"2001", "2002", "1999", "1995"};
         qq.addQuestion(new MultipleChoiceQuestion("In which year was Java made blah blah?", choices, 4));
+        qq.addQuestion(new SingleAnswerQuestion("What is the most used and unsecure password?", "Password"));
         qq.addQuestion(new MultipleChoiceQuestion("When was HTML made?", choices, 1));
         qq.addQuestion(new SingleAnswerQuestion("What does HTML stand for?", "Hyper Text Markup Language"));
 
@@ -28,6 +29,7 @@ public class Quiz {
         app.pack();
         app.setLocationRelativeTo(null);
         app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        app.setResizable(false);
         app.setVisible(true);
     }
 
